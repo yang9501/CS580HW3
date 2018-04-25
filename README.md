@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Fast Downward is a domain-independent planning system.
 
 For documentation and contact information see http://www.fast-downward.org/.
@@ -22,3 +23,6 @@ PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with
 this program. If not, see <http://www.gnu.org/licenses/>.
 ```
+=======
+# CS580HW3
+>>>>>>> c531a2623b50272e147fbc7db1c6047b84a1bd2d
