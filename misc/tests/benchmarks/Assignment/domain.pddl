@@ -4,20 +4,20 @@
 		(gripper ?g)
 		(gripAtRoom ?r)
 		(objInRoom ?o ?r)
-		(wallBetween ?r1 ?r2)
+		(canMoveBetween ?r1 ?r2)
 		(free ?g)
 		(carry ?o ?g)
 		(occupied ?r))
 
    (:action MoveWithoutObject
        :parameters  (?from ?to ?grip)
-       :precondition (and  (room ?from) (room ?to) (gripAtRoom ?from) (gripper ?grip) (free ?grip) (not (wallBetween ?from ?to)))
+       :precondition (and  (room ?from) (room ?to) (gripAtRoom ?from) (gripper ?grip) (free ?grip) (canMoveBetween ?from ?to))
        :effect (and  (gripAtRoom ?to)
 		     (not (gripAtRoom ?from))))
 
    (:action MoveWithObject
        :parameters  (?from ?to ?grip)
-       :precondition (and  (room ?from) (room ?to) (gripAtRoom ?from) (gripper ?grip) (not (free ?grip)) (not (wallBetween ?from ?to)) (not (occupied ?to)))
+       :precondition (and  (room ?from) (room ?to) (gripAtRoom ?from) (gripper ?grip) (not (free ?grip)) (canMoveBetween ?from ?to) (not (occupied ?to)))
        :effect (and  (gripAtRoom ?to)
 		     (not (gripAtRoom ?from))))
 
